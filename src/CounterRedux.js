@@ -1,4 +1,4 @@
-import "./App.css";
+import "./CounterRedux.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   increaseCounter,
@@ -7,7 +7,7 @@ import {
   increaseCounterPlus5,
 } from "./actions/counterActions";
 
-function App() {
+function CounterRedux() {
   const count = useSelector((store) => store.counterReducer.count);
 
   const dispatchCounter = useDispatch();
@@ -36,7 +36,7 @@ function App() {
         </button>
         <button
           onClick={() =>
-            count < 10
+            count < 6
               ? dispatchCounter(increaseCounterPlus5(5))
               : alert("El número no puede superar el 10")
           }
@@ -51,4 +51,4 @@ function App() {
   );
 }
 
-export default App;
+export default CounterRedux;
