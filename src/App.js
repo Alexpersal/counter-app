@@ -4,6 +4,7 @@ import {
   increaseCounter,
   decreaseCounter,
   resetCounter,
+  increaseCounterPlus5,
 } from "./actions/counterActions";
 
 function App() {
@@ -15,11 +16,32 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>{count}</p>
-        <button onClick={() => dispatchCounter(increaseCounter(1))}>
+        <button
+          onClick={() =>
+            count < 10
+              ? dispatchCounter(increaseCounter(1))
+              : alert("El número no puede superar el 10")
+          }
+        >
           Increase counter
         </button>
-        <button onClick={() => dispatchCounter(decreaseCounter(1))}>
+        <button
+          onClick={() =>
+            count > 0
+              ? dispatchCounter(decreaseCounter(1))
+              : alert("El número no puede bajar de 0")
+          }
+        >
           Decrease counter
+        </button>
+        <button
+          onClick={() =>
+            count < 10
+              ? dispatchCounter(increaseCounterPlus5(5))
+              : alert("El número no puede superar el 10")
+          }
+        >
+          Increase counter +5
         </button>
         <button onClick={() => dispatchCounter(resetCounter())}>
           Reset counter

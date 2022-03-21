@@ -12,6 +12,13 @@ export const decreaseCounter = (amount) => {
   };
 };
 
+export const increaseCounterPlus5 = (amount) => {
+  return {
+    type: "INCREASE_COUNTER_PLUS5",
+    payload: amount,
+  };
+};
+
 export const resetCounter = (amount) => {
   return {
     type: "RESET_COUNTER",
